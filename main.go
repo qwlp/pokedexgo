@@ -1,7 +1,5 @@
 package main
-import "fmt"
 
-main() {
-	fmt.Println("Hello, world!")
+func main() {
+	startREPL()
 }
-
