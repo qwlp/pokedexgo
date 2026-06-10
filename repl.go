@@ -6,6 +6,18 @@ import (
 	"os"
 )
 
+type UserInfo struct {
+	MapPage int
+}
+
+var userInfo UserInfo
+
+func init() {
+	userInfo = UserInfo{
+		MapPage: 0,
+	}
+}
+
 func executeCallback(input string) error {
 	cmd, exists := getCommands()[input]
 	if !exists {
@@ -24,6 +36,7 @@ func executeCallback(input string) error {
 func startREPL() {
 
 	scanner := bufio.NewScanner(os.Stdin)
+
 	for {
 		fmt.Print("Pokedex > ")
 		scanner.Scan()
